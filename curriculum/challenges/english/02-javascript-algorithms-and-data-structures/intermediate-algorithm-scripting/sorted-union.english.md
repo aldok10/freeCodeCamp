@@ -62,7 +62,7 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 ```js
 function uniteUnique(arr) {
   return [].slice.call(arguments).reduce(function(a, b) {
-    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));
+    return [].concat(a.filter((v, i, a) => a.indexOf(v) === i), b.filter(function(e) {return a.indexOf(e) === -1;}));
   }, []);
 }
 ```
